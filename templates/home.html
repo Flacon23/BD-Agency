@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Agency</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #4CAF50;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            width: 100%;
+            max-width: 1200px;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 20px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1em;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #e8f5e9;
+            transition: background-color 0.3s ease;
+        }
+
+        td {
+            font-size: 0.95em;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            th, td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+  <head>
+<title> Tour Agency</title>
+  </head>
+  <body>
+<h1>Tururi</h1>
+    <table border="1" style="width: 100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>IdTur</th>
+                <th>nume_Tur</th>
+                <th>durata</th>
+                <th>id_plecare</th>
+                <th>id_ghid</th>
+                <th>locuri_disponibile</th>
+                <th>id_destinatie</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ceva in tururi %}
+                <tr>
+                    <td>{{ ceva['idTur'] }}</td> 
+                    <td>{{ ceva['nume_Tur'] }}</td>      
+                    <td>{{ ceva['durata'] }}</td>   
+                    <td>{{ ceva['id_plecare'] }}</td>
+                    <td>{{ ceva['id_ghid'] }}</td>  
+                    <td>{{ ceva['locuri_disponibile'] }}</td>
+                    <td>{{ ceva['id_destinatie'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  </body>
+</html>

@@ -5,4 +5,5 @@ description = "Add your description here"
 requires-python = ">=3.11"
 dependencies = [
     "flask>=3.0.3",
+    "sqlalchemy>=2.0.36",
 ]
