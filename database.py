@@ -17,6 +17,3 @@ engine = create_engine(
   # Execută interogarea și afișează rezultatele
 with engine.connect() as conn:
       result = conn.execute(text("SELECT * FROM Tur"))
-      rows = result.fetchall()  # preia toate rezultatele
-      for row in rows:
-          print(row)

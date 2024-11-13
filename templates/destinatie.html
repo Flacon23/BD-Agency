@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Agency - Destinations</title>
+    <style>
+        /* Your existing CSS styling goes here */
+    </style>
+</head>
+<body>
+    <h1>Destinations</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id Destinatie</th>
+                <th>Nume Destinatie</th>
+                <th>Tip Destinatie</th>
+                <th>Ora Destinatie</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dest in destinatie %}
+                <tr>
+                    <td>{{ dest['id_destinatie'] }}</td>
+                    <td>{{ dest['nume_destinatie'] }}</td>
+                    <td>{{ dest['tip_destinatie'] }}</td>
+                    <td>{{ dest['ora_destinatie'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

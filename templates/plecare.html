@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Agency - Departures</title>
+    <style>
+        /* Your existing CSS styling goes here */
+    </style>
+</head>
+<body>
+    <h1>Departures</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id Plecare</th>
+                <th>Ora Plecare</th>
+                <th>Loc Plecare</th>
+                <th>Observatii Plecare</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for plecare in plecare %}
+                <tr>
+                    <td>{{ plecare['id_plecare'] }}</td>
+                    <td>{{ plecare['ora_plecare'] }}</td>
+                    <td>{{ plecare['loc_plecare'] }}</td>
+                    <td>{{ plecare['observatii_plecare'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

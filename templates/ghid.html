@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Agency - Guides</title>
+    <style>
+        /* Your existing CSS styling goes here */
+    </style>
+</head>
+<body>
+    <h1>Guides</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id Ghid</th>
+                <th>Nume Ghid</th>
+                <th>Prenume Ghid</th>
+                <th>Telefon Ghid</th>
+                <th>Email Ghid</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ghid in ghid %}
+                <tr>
+                    <td>{{ ghid['id_ghid'] }}</td>
+                    <td>{{ ghid['nume_ghid'] }}</td>
+                    <td>{{ ghid['prenume_ghid'] }}</td>
+                    <td>{{ ghid['telefon_ghid'] }}</td>
+                    <td>{{ ghid['email_ghid'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

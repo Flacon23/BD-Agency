@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Agency - Reservations</title>
+    <style>
+        /* Your existing CSS styling goes here */
+    </style>
+</head>
+<body>
+    <h1>Reservations</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id Turist</th>
+                <th>Id Tur</th>
+                <th>Data Rezervare</th>
+                <th>Nr Locuri Rezervate</th>
+                <th>Id Plata</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rezervare in rezervare %}
+                <tr>
+                    <td>{{ rezervare['id_turist'] }}</td>
+                    <td>{{ rezervare['id_tur'] }}</td>
+                    <td>{{ rezervare['data_rezervare'] }}</td>
+                    <td>{{ rezervare['nr_locuri_rezervate'] }}</td>
+                    <td>{{ rezervare['id_plata'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Agency - Payments</title>
+    <style>
+        /* Your existing CSS styling goes here */
+    </style>
+</head>
+<body>
+    <h1>Payments</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id Plata</th>
+                <th>Data Platii</th>
+                <th>Suma</th>
+                <th>Metoda Platii</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for payment in plate %}
+                <tr>
+                    <td>{{ payment['id_plata'] }}</td>
+                    <td>{{ payment['data_platii'] }}</td>
+                    <td>{{ payment['suma'] }}</td>
+                    <td>{{ payment['metoda_platii'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
