@@ -75,7 +75,11 @@ def load_plecare():
     return result_all
 
 @app.route('/')
-def dashboard():
+def login():
+  return render_template('login.html')
+
+@app.route('/home')
+def home():
   return render_template('home.html')
 
 @app.route('/tur')
@@ -112,6 +116,8 @@ def rezervare():
 def plecare():
   plecare=load_plecare()
   return render_template('plecare.html',plecare=plecare)
+
+
 
 if __name__=='__main__':
   app.run(host='0.0.0.0',debug=True)

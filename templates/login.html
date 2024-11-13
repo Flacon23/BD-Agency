@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Nume utilizator" required>
+            <input type="password" id="password" placeholder="Parolă" required>
+            <button type="button" onclick="login()">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (username === "admin" && password === "p") {
+                alert("Autentificare reușită ca administrator!");
+                window.location.href = "{{url_for('home')}}";
+            } else if (username === "user" && password === "user_password") {
+                alert("Autentificare reușită ca user!");
+                // Redirecționare sau alte acțiuni pentru utilizator
+            } else {
+                alert("Nume utilizator sau parolă incorectă!");
+            }
+        }
+    </script>
+</body>
+</html>
