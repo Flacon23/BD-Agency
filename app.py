@@ -47,14 +47,7 @@ def load_rezervare():
       result_all.append(row)
     return result_all
 
-def load_rezervare():
-  with engine.connect() as conn:
-    result = conn.execute(text("SELECT * FROM Rezervare"))
-    result_all=[]
-    rows = result.fetchall()  
-    for row in rows:
-      result_all.append(row)
-    return result_all
+
 
 def load_turisti():
   with engine.connect() as conn:

@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Baza Tururi</title>
     <style>
+        /* Fundal animat cu gradient */
         body {
             font-family: Arial, sans-serif;
             display: flex;
@@ -12,45 +13,92 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            overflow: hidden;
+            background: linear-gradient(45deg, #1e3c72, #2a5298, #4a00e0, #8e2de2);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            color: #fff;
         }
 
+        /* Animația gradientului */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Containerul formularului */
         .container {
             text-align: center;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        /* Efect de hover pentru container */
+        .container:hover {
+            transform: scale(1.05);
         }
 
         h1 {
             margin-bottom: 20px;
+            font-size: 2.2em;
+            color: #ffdd57;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
         }
 
+        /* Input-uri pentru username și password */
         input[type="text"],
         input[type="password"] {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            outline: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
+        /* Efect de focus pentru input-uri */
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            background-color: #ffdd57;
+            color: #333;
+            transform: scale(1.02);
+        }
+
+        /* Stilizarea butonului */
         button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 16px;
-            background-color: #007BFF;
-            color: white;
-            transition: background-color 0.3s ease;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #fff;
+            background-color: #ffdd57;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
         }
 
+        /* Efecte de hover și apăsare pentru buton */
         button:hover {
-            background-color: #0056b3;
+            background-color: #ffbb00;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            transform: translateY(-3px);
+        }
+
+        button:active {
+            background-color: #ff8800;
+            transform: translateY(2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -69,13 +117,11 @@
             var username = document.getElementById('username').value;
             var password = document.getElementById('password').value;
 
-            if (username === "admin" && password === "p") {
-                alert("Autentificare reușită ca administrator!");
+            if (username === "agentie" && password === "turistica") {
                 window.location.href = "{{url_for('home')}}";
             } else if (username === "user" && password === "user_password") {
-                alert("Autentificare reușită ca user!");
-                // Redirecționare sau alte acțiuni pentru utilizator
-            } else {
+            } 
+            else {
                 alert("Nume utilizator sau parolă incorectă!");
             }
         }

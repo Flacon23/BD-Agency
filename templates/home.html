@@ -1,20 +1,82 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <style>
+        /* Resetare margini și font general */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        nav {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a {
+            color: #f5f5f5;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin: 0 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffb400;
+            transform: scale(1.1);
+        }
+
+        nav a:active {
+            color: #f08080;
+            transform: scale(0.95);
+        }
+
+        /* Efecte responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            nav a {
+                font-size: 1em;
+                margin: 0 5px;
+            }
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome to the Travel System</h1>
     <nav>
-        <a href="/plate">Payments</a> |
-        <a href="/destinatie">Destinations</a> |
-        <a href="/rezervare">Reservations</a> |
-        <a href="/turisti">Tourists</a> |
-        <a href="/tur">Tours</a> |
-        <a href="/plecare">Departures</a> |
-        <a href="/ghid">Guides</a>
+        <a href="/plate">Plate</a> |
+        <a href="/destinatie">Destinatie</a> |
+        <a href="/rezervare">Rezervare</a> |
+        <a href="/turisti">Turisti</a> |
+        <a href="/tur">Tururi</a> |
+        <a href="/plecare">Plecari</a> |
+        <a href="/ghid">Ghizi</a>
     </nav>
 </body>
 </html>

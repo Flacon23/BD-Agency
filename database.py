@@ -14,6 +14,4 @@ engine = create_engine(
       "mysql+pymysql://{user}:{password}@{host}:{port}/{database}".format(**conf)
   )
 
-  # Execută interogarea și afișează rezultatele
-with engine.connect() as conn:
-      result = conn.execute(text("SELECT * FROM Tur"))
+  
